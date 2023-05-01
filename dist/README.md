@@ -2,45 +2,26 @@
 
 Grafana Plugin to Graph timeseries from Dynatraces API
 
-![](https://raw.githubusercontent.com/piotr1212/grafana-dynatrace-datasource/master/docs/example_panel.png)
+![]![image](https://user-images.githubusercontent.com/34588898/235481721-67574a36-e63c-4a4d-9686-0e62002261c3.png))
 
 More information on the [Dynatrace API](https://www.dynatrace.com/support/help/dynatrace-api/timeseries/how-do-i-fetch-the-metrics-of-monitored-entities/)
 
 
 ## Limitations and issues
 
-- Only proxy mode supported
-- Only on premise installations
-- Problems and events API are not implemented, only Timeseries
+- Problems and events API are not implemented, only metrics
 
 
 ## Installation
 
-Checkout in `grafana/data/plugins`, run the commands listed in "Dev setup" and restart Grafana.
-
-
-### Dev setup
-
-```
-npm install yarn
-./node_modules/yarn/bin/yarn install
+git clone /tmp/
+cd /tmp/grafana-dynatrace-datasource
+yarn install
 npm run build
-```
+rm -Rf /usr/share/grafana/data/plugins/grafana-dynatrace-datasource/ && rm -Rf /var/lib/grafana/plugins/grafana-dynatrace-datasource/ && mkdir /usr/share/grafana/data/plugins/grafana-dynatrace-datasource && mkdir /var/lib/grafana/plugins/grafana-dynatrace-datasource/ && cp -Rf dist/* /usr/share/grafana/data/plugins/grafana-dynatrace-datasource && cp -Rf dist/*  /var/lib/grafana/plugins/grafana-dynatrace-datasource/
 
-## Building a custom Grafana image
 
-Checkout in `grafana-dynatrace-datasource`
+![image](https://user-images.githubusercontent.com/34588898/235481847-dc647fc5-5384-443c-b053-80b0bbf1e300.png)
 
-Build and run:
 
-```
-cd grafana-dynatrace-datasource
-docker build -t grafana:latest-with-plugins .
-docker run -d -p 3000:3000 grafana:latest-with-plugins
-```
 
-### Changelog
-
-1.0.1
-- Initial release
-- Update Dockerfile to build with Grafana v7.0+
