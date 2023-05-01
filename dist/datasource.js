@@ -81,7 +81,7 @@ System.register(['@grafana/data', '@grafana/runtime'], function (_export, _conte
             var response = getBackendSrv().fetch({
               url: '' + this.baseUrl + url + (params ? '&' + params : ''),
               headers: {
-                Authorization: 'Api-Token dt0c01.DP2DQOZAENIKVBQOGJJ6KFP4.S4CO4JFE55NHQ7NEDRC5ASWNQ4PKST4D6NUBB7BVFYUVRUKJKZPS5BNDHEETW6RA'
+                Authorization: 'Api-Token dt0c01.....'
               }
             });
             return response.toPromise();
