@@ -9,27 +9,20 @@ More information on the [Dynatrace API](https://www.dynatrace.com/support/help/d
 
 ## Limitations and issues
 
-- Only proxy mode supported
-- Only on premise installations
 - Problems and events API are not implemented, only Timeseries
 
 
 ## Installation
 
-Checkout in `grafana/data/plugins`, run the commands listed in "Dev setup" and restart Grafana.
-
-
-### Dev setup
-
-```
-npm install yarn
-./node_modules/yarn/bin/yarn install
+cd /tmp
+git clone https://github.com/apoc1238/GrafanaDatasource_DynatraceAPIv2Metric.git
+yarn install
 npm run build
-```
 
-## Building a custom Grafana image
 
-Checkout in `grafana-dynatrace-datasource`
+![image](![image](https://user-images.githubusercontent.com/34588898/235482750-b68a911c-5c73-49f4-8529-6ab888a80256.png))
+
+
 
 Build and run:
 
