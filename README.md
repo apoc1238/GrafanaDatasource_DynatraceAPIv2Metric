@@ -1,15 +1,9 @@
 ## Dynatrace Datasource - graph metrics from Dynatrace
 
-Grafana Plugin to Graph timeseries from Dynatraces API
-
-![](https://raw.githubusercontent.com/piotr1212/grafana-dynatrace-datasource/master/docs/example_panel.png)
-
-More information on the [Dynatrace API](https://www.dynatrace.com/support/help/dynatrace-api/timeseries/how-do-i-fetch-the-metrics-of-monitored-entities/)
-
 
 ## Limitations and issues
 
-- Problems and events API are not implemented, only Timeseries
+- Problems and events API are not implemented, only metrics
 
 
 ## Installation
