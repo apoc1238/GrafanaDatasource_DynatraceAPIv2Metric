@@ -1,9 +1,32 @@
-<div class="gf-form">
-  <label class="gf-form-label width-10">Metric Selector</label>
-  <input type="text" class="gf-form-input width-25" ng-model="ctrl.target.queryText" placeholder="builtin:service.errors.fivexx.count" ng-change="ctrl.onChange()" />
-</div>
-
-<div class="gf-form">
-  <label class="gf-form-label width-10">Alias</label>
-  <input type="text" class="gf-form-input width-25" ng-model="ctrl.target.alias" placeholder="5XX Errors" />
-</div>
+<query-editor-row query-ctrl="ctrl" class="generic-datasource-query-row" has-text-edit-mode="false">
+  <div class="gf-form-inline">
+    <div class="gf-form">
+      <label class="gf-form-label query-keyword width-7">Manual</label>
+      <input type="text" class="gf-form-input width-30" ng-model="ctrl.target.customQuery" placeholder="Enter custom query">
+    </div>
+    <div class="gf-form" ng-disabled="ctrl.target.customQuery && ctrl.target.customQuery.length">
+      <label class="gf-form-label query-keyword width-7">Metric Selector</label>
+      <gf-form-dropdown model="ctrl.target.metric"
+        allow-custom="true"
+        lookup-text="true"
+        get-options="ctrl.getMetricList()">
+      </gf-form-dropdown>
+    </div>
+    <div class="gf-form" ng-disabled="ctrl.target.customQuery && ctrl.target.customQuery.length">
+      <label class="gf-form-label query-keyword width-7">Split By</label>
+      <gf-form-dropdown model="ctrl.target.splitBy"
+        allow-custom="true"
+        lookup-text="true"
+        get-options="ctrl.getSplitByOptions()">
+      </gf-form-dropdown>
+    </div>
+    <div class="gf-form" ng-disabled="ctrl.target.customQuery && ctrl.target.customQuery.length">
+      <label class="gf-form-label query-keyword width-7">Filter Criteria</label>
+      <input type="text" class="gf-form-input width-10" ng-model="ctrl.target.filterCriteria" ng-model-onblur placeholder="Filter criteria">
+    </div>
+    <div class="gf-form" ng-disabled="ctrl.target.customQuery && ctrl.target.customQuery.length">
+      <label class="gf-form-label query-keyword width-7">Filter Value</label>
+      <input type="text" class="gf-form-input width-10" ng-model="ctrl.target.filterValue" ng-model-onblur placeholder="Filter value">
+    </div>
+  </div>
+</query-editor-row>
