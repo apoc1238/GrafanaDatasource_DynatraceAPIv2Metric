@@ -131,7 +131,7 @@ export default class DataSource {
       const response = await getBackendSrv().fetch({
         url: fullUrl,
         headers: {
-          Authorization: 'Api-Token dt0c01.UT3NNEE4BFQJ637V3CDD2HUI.YX6AKDWVODJCT7Z7TXLCA5FT7IVY25ZB6FDO45EQIKAMHD5KVLJU7DDPNFNXTOD2',
+          Authorization: 'Api-Token dt0c01.....',
         },
       }).toPromise();
       console.log('Received response:', response);
