@@ -5,6 +5,7 @@ import { getBackendSrv, isFetchError } from '@grafana/runtime';
 export default class DataSource {
   constructor(instanceSettings, $q, backendSrv, templateSrv) {
     this.baseUrl = instanceSettings.url;
+    this.token = instanceSettings.jsonData.token;
     this.backendSrv = backendSrv;
     this.templateSrv = templateSrv;
     this.getBackendSrv = getBackendSrv;
@@ -131,7 +132,7 @@ export default class DataSource {
       const response = await getBackendSrv().fetch({
         url: fullUrl,
         headers: {
-          Authorization: 'Api-Token dt0c01.....',
+          Authorization: `Api-Token ${this.token}`,
         },
       }).toPromise();
       console.log('Received response:', response);
